@@ -17,14 +17,9 @@ function getComputerSelection() {
 // computer chooses
 getComputerSelection(computerSelection);
 
-// show computer choice
-console.log('computer chose ' + computerSelection);
-
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
 
-// show player choice
-console.log('player chose ' + playerSelection);
 
 //check if player input is valid
 function checkInput(playerInput) {
@@ -41,34 +36,33 @@ function checkInput(playerInput) {
     }
 }
 
+// if input is valid, play game
 checkInput();
 if (gamePlay === true) {
     playGame();
-    console.log("Time to play");
 }
-
 
 function playGame(computer, player) {
     if (computerSelection === 'rock' && playerSelection === 'scissors') {
         console.log("Computer played \"Rock\". The computer wins! You lose.");
     }
     else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        console.log("Computer played \"Rock\".You win!");
+        console.log("Computer played \"Rock\". You win!");
     }
     else if (computerSelection === 'paper' && playerSelection === 'rock') {
         console.log("Computer played \"Paper\". The computer wins! You lose.");
     }
     else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        console.log("Computer played \"Paper\".You win!");
+        console.log("Computer played \"Paper\". You win!");
     }
     else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        console.log("Computer played \"Scissors\".You win!");
+        console.log("Computer played \"Scissors\". You win!");
     }
     else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        console.log("Computer played \"Scissors\".You win!");
+        console.log("Computer played \"Scissors\". You win!");
     }
     else if (computerSelection == playerSelection) {
-        console.log("Draw.");
+        console.log("The computer chose " + computerSelection + " too. It's a tie!");
     }
 }
 
