@@ -1,27 +1,48 @@
-// set scores to zero
+// set scores to zero!!
+
+
 // computer has 3 choices
-const choice = ["rock", "paper", "scissors"];
-// computer chooses R, P or S randomly
+const choice = ['rock', 'paper', 'scissors'];
+let gamePlay;
+let computerSelection;
 
-//get computer choice
-
-function getComputerSelection(computerChoice) {
+//computer chooses R, P or S randomly
+function getComputerSelection() {
     let computerSelection = choice[Math.floor(Math.random() * choice.length)];
-    // console.log(computerSelection);
 }
+// get computer choice 
+getComputerSelection();
 
+// game asks for input, player chooses R, P or S, make input case insensitive
+let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
+console.log(playerSelection); // remove
 
-// game asks for input
-// let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.');
+//check if player input is valid
+function checkInput(playerInput) {
+    if (playerSelection === 'rock'||
+    playerSelection === 'paper' ||
+    playerSelection === 'scissors') {
+    console.log("ready!"); // remove
+    gamePlay = true;
+    } else if (playerSelection !== 'rock'||
+        playerSelection !== 'paper' ||
+        playerSelection !== 'scissors') {
+        prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase(); // change to error message
+        gamePlay = false;
+    }
+}
+checkInput();
 
-// player chooses R, P or S
-// check if player input is valid / if there is input
-// make input case insensitive
-// playerSelection.toLowerCase();
-
-
+/* if (gamePlay === true) {
+    playGame();
+}
+else 
 
 /*
+
+
+
+
 function playGame(computerSelection, playerSelection) {
     if ((computerSelection === "rock") && (playerSelection === "scissors")) {
         console.log("Computer played \"Rock\". The computer wins! You lose.");
@@ -45,15 +66,10 @@ function playGame(computerSelection, playerSelection) {
         console.log("Draw.");
     }
 }
+*/
 
-*/
-/* 
-if (playerSelection === "rock" || "paper" || "scissors") [
-    playGame(playerSelection, computerSelection)
-]
-*/
 // game shows computer selection
 // game selects winner
 // game records score
 // game resets
-// after 5 games, game declares winner
+// after 5 games game declares winner
