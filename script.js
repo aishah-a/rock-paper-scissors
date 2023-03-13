@@ -1,72 +1,76 @@
-// set scores to zero!!
-
+/* TO DO
+1. set scores to zero!!
+2. Force valid input
+3. Count score
+*/
 
 // computer has 3 choices
-const choice = ['rock', 'paper', 'scissors'];
-let gamePlay;
 let computerSelection;
+let gamePlay;
 
 //computer chooses R, P or S randomly
 function getComputerSelection() {
-    let computerSelection = choice[Math.floor(Math.random() * choice.length)];
+    const choice = ['rock', 'paper', 'scissors'];
+    computerSelection = choice[Math.floor(Math.random() * choice.length)];
 }
-// get computer choice 
-getComputerSelection();
+
+// computer chooses
+getComputerSelection(computerSelection);
+
+// show computer choice
+console.log('computer chose ' + computerSelection);
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
-console.log(playerSelection); // remove
+
+// show player choice
+console.log('player chose ' + playerSelection);
 
 //check if player input is valid
 function checkInput(playerInput) {
     if (playerSelection === 'rock'||
     playerSelection === 'paper' ||
     playerSelection === 'scissors') {
-    console.log("ready!"); // remove
     gamePlay = true;
     } else if (playerSelection !== 'rock'||
         playerSelection !== 'paper' ||
         playerSelection !== 'scissors') {
-        prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase(); // change to error message
         gamePlay = false;
+        playerSelection = prompt('To play, pick "Rock", "Paper" or "Scissors.').toLowerCase();
+        return checkInput(playerInput);
     }
 }
+
 checkInput();
-
-/* if (gamePlay === true) {
+if (gamePlay === true) {
     playGame();
+    console.log("Time to play");
 }
-else 
-
-/*
 
 
-
-
-function playGame(computerSelection, playerSelection) {
-    if ((computerSelection === "rock") && (playerSelection === "scissors")) {
+function playGame(computer, player) {
+    if (computerSelection === 'rock' && playerSelection === 'scissors') {
         console.log("Computer played \"Rock\". The computer wins! You lose.");
     }
-    else if ((computerSelection === "rock") && (playerSelection === "paper")) {
+    else if (computerSelection === 'rock' && playerSelection === 'paper') {
         console.log("Computer played \"Rock\".You win!");
     }
-    else if ((computerSelection === "paper") && (playerSelection === "rock")) {
+    else if (computerSelection === 'paper' && playerSelection === 'rock') {
         console.log("Computer played \"Paper\". The computer wins! You lose.");
     }
-    else if ((computerSelection === "paper") && (playerSelection === "scissors")) {
+    else if (computerSelection === 'paper' && playerSelection === 'scissors') {
         console.log("Computer played \"Paper\".You win!");
     }
-    else if ((computerSelection === "scissors") && (playerSelection === "rock")) {
+    else if (computerSelection === 'scissors' && playerSelection === 'rock') {
         console.log("Computer played \"Scissors\".You win!");
     }
-    else if ((computerSelection === "scissors") && (playerSelection === "paper")) {
+    else if (computerSelection === 'scissors' && playerSelection === 'paper') {
         console.log("Computer played \"Scissors\".You win!");
     }
-    else if (computerSelection === playerSelection) {
+    else if (computerSelection == playerSelection) {
         console.log("Draw.");
     }
 }
-*/
 
 // game shows computer selection
 // game selects winner
