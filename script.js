@@ -4,6 +4,8 @@
 3. Count score
 */
 
+
+
 // computer has 3 choices
 let computerSelection;
 let gamePlay;
@@ -16,6 +18,7 @@ function getComputerSelection() {
 
 // computer chooses
 getComputerSelection(computerSelection);
+console.log(computerSelection);
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
@@ -39,33 +42,46 @@ function checkInput(playerInput) {
 // if input is valid, play game
 checkInput();
 if (gamePlay === true) {
-    playGame();
+    console.log('let\'s play');
+    getChoice();
 }
 
-function playGame(computer, player) {
+let gameResult;
+if (computerSelection == playerSelection) {
+    gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
+};
+
+function getChoice(computerSelection, playerSelection) {
+    return computerSelection, playerSelection ; {
+    }
+}
+
+
+
+    /*
     if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        console.log("Computer played \"Rock\". The computer wins! You lose.");
+        gameResult = "Computer played \"Rock\". The computer wins! You lose."
     }
     else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        console.log("Computer played \"Rock\". You win!");
+        return "Computer played \"Rock\". You win!"
     }
     else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        console.log("Computer played \"Paper\". The computer wins! You lose.");
+        return "Computer played \"Paper\". The computer wins! You lose."
     }
     else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        console.log("Computer played \"Paper\". You win!");
+        return "Computer played \"Paper\". You win!"
     }
     else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        console.log("Computer played \"Scissors\". You win!");
+        return "Computer played \"Scissors\". You win!"
     }
     else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        console.log("Computer played \"Scissors\". You win!");
+        return "Computer played \"Scissors\". You win!"
     }
     else if (computerSelection == playerSelection) {
-        console.log("The computer chose " + computerSelection + " too. It's a tie!");
+        return "The computer chose " + computerSelection + " too. It's a tie!";
     }
 }
-
+*/
 // game shows computer selection
 // game selects winner
 // game records score
