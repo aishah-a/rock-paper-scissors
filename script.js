@@ -15,13 +15,10 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// computer chooses
 computerSelection = getComputerChoice();
 
-// game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
 
-//check if player input is valid
 function checkInput(playerInput) {
     if (playerSelection === 'rock'||
     playerSelection === 'paper' ||
@@ -64,12 +61,8 @@ function playRound() {
 console.log(gameResult);
 
 
-
-/*
-
-game shows computer selection
-game selects winner
-game records score
-game resets
-after 5 games game declares winner
-*/
+// declare score variables
+// game records score based on outcome of each game
+// when either score = 5, end game
+// declare winner, ask if play again
+// reset game
