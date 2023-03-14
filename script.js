@@ -16,6 +16,7 @@ function getComputerChoice() {
 }
 
 computerSelection = getComputerChoice();
+console.log(computerSelection);
 
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
 
@@ -33,36 +34,54 @@ function checkInput(playerInput) {
     }
 }
 
-// if input is valid, play game
+// declare score variables
+let computerScore = 0;
+let playerScore = 0;
+
 checkInput();
+// if input is valid, play game
 if (gamePlay === true) {
     playRound();
 }
+
 
 function playRound() {
     if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-    gameResult = "Computer played \"Rock\". The computer wins! You lose.";
+        gameResult = "Computer played \"Rock\". The computer wins! You lose.";
+        computerScore +=1;
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
         gameResult = "Computer played \"Rock\". You win!";
+        playerScore +=1;
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
         gameResult = "Computer played \"Paper\". The computer wins! You lose.";
+        computerScore +=1;
     } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
         gameResult = "Computer played \"Paper\". You win!";
+        playerScore +=1;
     } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
         gameResult = "Computer played \"Scissors\". You win!";
+        playerScore +=1;
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
         gameResult = "Computer played \"Scissors\". You win!"
+        playerScore +=1;
     }
     return gameResult; 
 }
 
 console.log(gameResult);
+console.log('Computer score = ' + computerScore + '\nYour score = ' + playerScore);
 
 
-// declare score variables
 // game records score based on outcome of each game
 // when either score = 5, end game
 // declare winner, ask if play again
 // reset game
+
+let score = playerScore + computerScore
+console.log(score);
+
+
+
+// game();
