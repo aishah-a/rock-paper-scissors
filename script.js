@@ -11,14 +11,15 @@ let computerSelection;
 let gamePlay;
 
 //computer chooses R, P or S randomly
-function getComputerSelection() {
+function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
     computerSelection = choice[Math.floor(Math.random() * choice.length)];
+    return computerSelection;
 }
 
 // computer chooses
-getComputerSelection(computerSelection);
-console.log(computerSelection);
+getComputerChoice();
+console.log(getComputerChoice());
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
@@ -43,18 +44,27 @@ function checkInput(playerInput) {
 checkInput();
 if (gamePlay === true) {
     console.log('let\'s play');
-    getChoice();
+    // playRound
 }
+
+/* function getChoice(computerSelection, playerSelection) {
+    if (computerSelection == playerSelection) {
+    gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
+    return gameResult ; {
+    }
+}
+
+console.log(getChoice());
+
+/*
 
 let gameResult;
 if (computerSelection == playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
 };
 
-function getChoice(computerSelection, playerSelection) {
-    return computerSelection, playerSelection ; {
-    }
-}
+
+
 
 
 
