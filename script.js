@@ -16,9 +16,8 @@ function getComputerChoice() {
 }
 
 computerSelection = getComputerChoice();
-console.log(computerSelection);
 
-let playerSelection;
+let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
 
 function checkInput(playerInput) {
     if (playerSelection === 'rock'||
@@ -34,23 +33,17 @@ function checkInput(playerInput) {
     }
 }
 
-// declare score variables
-let computerScore = 0;
-let playerScore = 0;
-
-checkInput();
 // if input is valid, play game
+checkInput();
 if (gamePlay === true) {
     playRound();
 }
 
 function playRound() {
-    playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
-    checkInput();
     if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        gameResult = "Computer played \"Rock\". The computer wins! You lose.";
+    gameResult = "Computer played \"Rock\". The computer wins! You lose.";
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
         gameResult = "Computer played \"Rock\". You win!";
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
@@ -66,17 +59,10 @@ function playRound() {
 }
 
 console.log(gameResult);
-console.log('Computer score = ' + computerScore + '\nYour score = ' + playerScore);
 
 
+// declare score variables
 // game records score based on outcome of each game
 // when either score = 5, end game
 // declare winner, ask if play again
 // reset game
-
-let score = playerScore + computerScore
-console.log(score);
-
-
-
-// game();
