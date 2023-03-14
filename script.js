@@ -19,6 +19,7 @@ function getComputerChoice() {
 
 // computer chooses
 computerSelection = getComputerChoice();
+console.log(computerSelection);
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
@@ -50,45 +51,26 @@ let gameResult;
 function getChoice() {
     if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
-    return gameResult; 
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+    gameResult = "Computer played \"Rock\". The computer wins! You lose.";
+    } else if (computerSelection === 'rock' && playerSelection === 'paper') {
+        gameResult = "Computer played \"Rock\". You win!";
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+        gameResult = "Computer played \"Paper\". The computer wins! You lose.";
+    } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
+        gameResult = "Computer played \"Paper\". You win!";
+    } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
+        gameResult = "Computer played \"Scissors\". You win!";
+    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+        gameResult = "Computer played \"Scissors\". You win!"
     }
+    return gameResult; 
 }
 
 getChoice();
 console.log(gameResult);
 
 
-/* let gameResult;
-if (computerSelection == playerSelection) {
-    return "The computer chose " + computerSelection + " too. It's a tie!";
-}
-*/
-
-/*
-
-    if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        gameResult = "Computer played \"Rock\". The computer wins! You lose."
-    }
-    else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        return "Computer played \"Rock\". You win!"
-    }
-    else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        return "Computer played \"Paper\". The computer wins! You lose."
-    }
-    else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        return "Computer played \"Paper\". You win!"
-    }
-    else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        return "Computer played \"Scissors\". You win!"
-    }
-    else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        return "Computer played \"Scissors\". You win!"
-    }
-    else if (computerSelection == playerSelection) {
-        return "The computer chose " + computerSelection + " too. It's a tie!";
-    }
-}
-*/
 
 /*
 
