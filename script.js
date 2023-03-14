@@ -9,6 +9,7 @@
 // computer has 3 choices
 let computerSelection;
 let gamePlay;
+let gameResult;
 
 //computer chooses R, P or S randomly
 function getComputerChoice() {
@@ -42,11 +43,8 @@ function checkInput(playerInput) {
 // if input is valid, play game
 checkInput();
 if (gamePlay === true) {
-    console.log('let\'s play');
     playRound();
 }
-
-let gameResult;
 
 function playRound() {
     if (computerSelection === playerSelection) {
