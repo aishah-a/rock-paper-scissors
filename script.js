@@ -43,12 +43,12 @@ function checkInput(playerInput) {
 checkInput();
 if (gamePlay === true) {
     console.log('let\'s play');
-    // playRound
+    playRound();
 }
 
 let gameResult;
 
-function getChoice() {
+function playRound() {
     if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
@@ -67,7 +67,7 @@ function getChoice() {
     return gameResult; 
 }
 
-getChoice();
+playRound();
 console.log(gameResult);
 
 
