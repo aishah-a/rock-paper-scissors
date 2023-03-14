@@ -13,17 +13,15 @@ let gamePlay;
 //computer chooses R, P or S randomly
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
-    computerSelection = choice[Math.floor(Math.random() * choice.length)];
-    return computerSelection;
+    computerChoice = choice[Math.floor(Math.random() * choice.length)];
+    return computerChoice;
 }
 
 // computer chooses
-getComputerChoice();
-console.log(getComputerChoice());
+computerSelection = getComputerChoice();
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
-
 
 //check if player input is valid
 function checkInput(playerInput) {
@@ -47,28 +45,27 @@ if (gamePlay === true) {
     // playRound
 }
 
-/* function getChoice(computerSelection, playerSelection) {
-    if (computerSelection == playerSelection) {
+let gameResult;
+
+function getChoice() {
+    if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
-    return gameResult ; {
+    return gameResult; 
     }
 }
 
-console.log(getChoice());
+getChoice();
+console.log(gameResult);
+
+
+/* let gameResult;
+if (computerSelection == playerSelection) {
+    return "The computer chose " + computerSelection + " too. It's a tie!";
+}
+*/
 
 /*
 
-let gameResult;
-if (computerSelection == playerSelection) {
-    gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
-};
-
-
-
-
-
-
-    /*
     if (computerSelection === 'rock' && playerSelection === 'scissors') {
         gameResult = "Computer played \"Rock\". The computer wins! You lose."
     }
@@ -92,8 +89,12 @@ if (computerSelection == playerSelection) {
     }
 }
 */
-// game shows computer selection
-// game selects winner
-// game records score
-// game resets
-// after 5 games game declares winner
+
+/*
+
+game shows computer selection
+game selects winner
+game records score
+game resets
+after 5 games game declares winner
+*/
