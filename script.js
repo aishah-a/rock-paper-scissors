@@ -65,7 +65,6 @@ function playRound() {
     return gameResult; 
 }
 
-playRound();
 console.log(gameResult);
 
 
