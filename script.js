@@ -1,10 +1,7 @@
 /* TO DO
 1. set scores to zero!!
-2. Force valid input
-3. Count score
+2. Count score
 */
-
-
 
 // computer has 3 choices
 let computerSelection;
@@ -20,7 +17,6 @@ function getComputerChoice() {
 
 // computer chooses
 computerSelection = getComputerChoice();
-console.log(computerSelection);
 
 // game asks for input, player chooses R, P or S, make input case insensitive
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
