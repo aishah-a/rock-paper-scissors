@@ -11,11 +11,12 @@ let gameResult;
 //computer chooses R, P or S randomly
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
-    computerChoice = choice[Math.floor(Math.random() * choice.length)];
+    const computerChoice = choice[Math.floor(Math.random() * choice.length)];
     return computerChoice;
 }
 
 computerSelection = getComputerChoice();
+console.log(computerSelection)
 
 let playerSelection = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
 
@@ -42,20 +43,17 @@ if (gamePlay === true) {
 function playRound() {
     if (computerSelection === playerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
-    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-    gameResult = "Computer played \"Rock\". The computer wins! You lose.";
-    } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        gameResult = "Computer played \"Rock\". You win!";
-    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        gameResult = "Computer played \"Paper\". The computer wins! You lose.";
-    } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        gameResult = "Computer played \"Paper\". You win!";
-    } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        gameResult = "Computer played \"Scissors\". You win!";
-    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        gameResult = "Computer played \"Scissors\". You win!"
-    }
-    return gameResult; 
+    } else if (
+    (computerSelection === 'rock' && playerSelection === 'scissors') ||
+    (computerSelection === 'paper' && playerSelection === 'rock') ||
+    (computerSelection === 'scissors' && playerSelection === 'paper')) {
+    gameResult = 'Computer played "' + computerSelection + '". You win!';
+    } else if (
+    (computerSelection === 'rock' && playerSelection === 'paper') ||
+    (computerSelection === 'paper' && playerSelection === 'scissors') ||
+    (computerSelection === 'scissors' && playerSelection === 'rock')) {
+    gameResult = 'Computer played "' + computerSelection + '". The computer wins! You lose.';
+    } return gameResult; 
 }
 
 console.log(gameResult);
