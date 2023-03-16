@@ -41,17 +41,17 @@ if (gamePlay === true) {
 }
 
 function playRound() {
-    if (computerSelection === playerSelection) {
+    if (playerSelection === computerSelection) {
     gameResult = "The computer chose " + computerSelection + " too. It's a tie!";
     } else if (
-    (computerSelection === 'rock' && playerSelection === 'scissors') ||
-    (computerSelection === 'paper' && playerSelection === 'rock') ||
-    (computerSelection === 'scissors' && playerSelection === 'paper')) {
+    (playerSelection === 'rock' && computerSelection === 'scissors') ||
+    (playerSelection === 'paper' && computerSelection === 'rock') ||
+    (playerSelection === 'scissors' && computerSelection === 'paper')) {
     gameResult = 'Computer played "' + computerSelection + '". You win!';
     } else if (
-    (computerSelection === 'rock' && playerSelection === 'paper') ||
-    (computerSelection === 'paper' && playerSelection === 'scissors') ||
-    (computerSelection === 'scissors' && playerSelection === 'rock')) {
+    (playerSelection === 'rock' && computerSelection === 'paper') ||
+    (playerSelection === 'paper' && computerSelection === 'scissors') ||
+    (playerSelection === 'scissors' && computerSelection === 'rock')) {
     gameResult = 'Computer played "' + computerSelection + '". The computer wins! You lose.';
     } return gameResult; 
 }
