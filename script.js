@@ -1,3 +1,10 @@
+playerScore = 0;
+computerScore = 0;
+let computerSelection;
+let playerSelection;
+let roundWinner;
+let gameCount;
+
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
     let computerChoice = choice[Math.floor(Math.random() * choice.length)];
@@ -28,14 +35,6 @@ function playRound(choiceC, choiceP) {
     }
 }
 
-playerScore = 0;
-computerScore = 0;
-let computerSelection;
-let playerSelection;
-let roundWinner;
-let gameCount;
-let playAgain;
-
 function game() {
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
@@ -45,7 +44,6 @@ function game() {
         checkWinner();
     }
 }
-
 
 function checkWinner() { 
     if (roundWinner === 'player') {
