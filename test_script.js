@@ -1,7 +1,6 @@
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
     const computerChoice = choice[Math.floor(Math.random() * choice.length)];
-    console.log(computerChoice);
     return computerChoice;
 }
 
@@ -26,40 +25,49 @@ function checkInput(choiceP) {
     }
 }
 
-function checkWinner(choiceP, choiceC) {
+function playRound(choiceP, choiceC) {
     if (computerSelection === playerSelection) {
-    return "The computer chose " + computerSelection + " too. It's a tie!";
+    console.log("The computer chose " + computerSelection + " too. It's a tie!");
+    return 'tie';
     } else if (
     (computerSelection === 'rock' && playerSelection === 'scissors') ||
     (computerSelection === 'paper' && playerSelection === 'rock') ||
     (computerSelection === 'scissors' && playerSelection === 'paper')) {
-    return 'Computer played "' + computerSelection + '". The computer wins! You lose!';
+    console.log('Computer played "' + computerSelection + '". The computer wins! You lose!');
+    return 'computer';
     } else if (
     (computerSelection === 'rock' && playerSelection === 'paper') ||
     (computerSelection === 'paper' && playerSelection === 'scissors') ||
     (computerSelection === 'scissors' && playerSelection === 'rock')) {
-    return 'Computer played "' + computerSelection + '".  You win!';
+    console.log('Computer played "' + computerSelection + '". You win!');
+
+    return 'player';
     }
 }
 
 function game () {
     checkInput(playerSelection);
-    console.log(gamePlay);
     if (gamePlay = true) {
-        checkWinner(playerSelection, computerSelection);
-        let roundWinner = (checkWinner());
-        console.log(roundWinner);
+        playRound(playerSelection, computerSelection);
+        let roundWinner = (playRound());
+        if (roundWinner === 'player') {
+            ++playerScore;
+        } else if (roundWinner === 'computer') {
+            ++computerScore;
+        }
     }
 
 }
 
+let playerScore = 0;
+let computerScore = 0;
 const computerSelection = getComputerChoice();
 let playerSelection = getPlayerChoice();
 let gamePlay;
 game();
+console.log('Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore );
 
 // get choices
 // check input
 // if input valid and gamplay = true, check winner
 // print winner
-
