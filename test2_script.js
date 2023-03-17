@@ -5,7 +5,7 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice(){
-    let playerChoice = prompt('Please select "Rock", "Paper" or "Scissors.').toLowerCase();
+    let playerChoice = prompt('Please select "Rock", "Paper" or "Scissors".').toLowerCase();
     return playerChoice;
 }
 
@@ -82,7 +82,7 @@ function checkInput(choiceP) {
     (playerSelection !== 'rock') ||
     (playerSelection !== 'paper') ||
     (playerSelection !== 'scissors') ) {
-    playerSelection = prompt('To play, pick "Rock", "Paper" or "Scissors.').toLowerCase();
+    playerSelection = prompt('To play, pick "Rock", "Paper" or "Scissors".').toLowerCase();
     return checkInput(choiceP);
     }
 }
