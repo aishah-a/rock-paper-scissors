@@ -1,7 +1,6 @@
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
     let computerChoice = choice[Math.floor(Math.random() * choice.length)];
-    console.log(computerChoice);
     return computerChoice;
 }
 
@@ -29,7 +28,6 @@ function playRound(choiceC, choiceP) {
     }
 }
 
-
 playerScore = 0;
 computerScore = 0;
 let computerSelection;
@@ -38,12 +36,14 @@ let roundWinner;
 let gameCount;
 let playAgain;
 
-
 function game() {
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
-    roundWinner = playRound();
-    checkWinner();
+    let check = checkInput();
+    if (check === true) {
+        roundWinner = playRound();
+        checkWinner();
+    }
 }
 
 
@@ -69,5 +69,20 @@ if (gameCount = 5) {
         console.log('The computer won! You lose.');
     } else if (playerScore === computerScore) {
         console.log('It\'s a tie!')
+    }
+}
+
+function checkInput(choiceP) {
+    if (
+    (playerSelection === 'rock') ||
+    (playerSelection === 'paper') ||
+    (playerSelection === 'scissors') ) {
+        return true;
+    } else if (
+    (playerSelection !== 'rock') ||
+    (playerSelection !== 'paper') ||
+    (playerSelection !== 'scissors') ) {
+    playerSelection = prompt('To play, pick "Rock", "Paper" or "Scissors.').toLowerCase();
+    return checkInput(choiceP);
     }
 }
