@@ -29,24 +29,14 @@ function playRound(choiceC, choiceP) {
     }
 }
 
-/*
-let computerSelection = getComputerChoice();
-let playerSelection = getPlayerChoice();
-let roundWinner = playRound();
-let playerScore = 0;
-let computerScore = 0;
-checkWinner();
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
-roundWinner = playRound();
-checkWinner();
-*/
 
 playerScore = 0;
 computerScore = 0;
 let computerSelection;
 let playerSelection;
 let roundWinner;
+let gameCount;
+let playAgain;
 
 
 function game() {
@@ -66,6 +56,18 @@ function checkWinner() {
     console.log('Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore );
 }
 
-for (let i = 0; i < 5; i++) {
+for (gameCount = 0; gameCount < 5; gameCount++) {
     game();
+}
+
+if (gameCount = 5) {
+    console.log('Game over!');
+    console.log('FINAL SCORE: \n Player: ' + playerScore + '\n Computer: ' + computerScore);
+    if (playerScore > computerScore) {    
+    console.log('You won the game!');
+    } else if (playerScore < computerScore) {    
+        console.log('The computer won! You lose.');
+    } else if (playerScore === computerScore) {
+        console.log('It\'s a tie!')
+    }
 }
