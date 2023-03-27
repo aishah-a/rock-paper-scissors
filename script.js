@@ -39,13 +39,10 @@ function playRound(choiceC, choiceP) {
 
 function game() {
     computerSelection = getComputerChoice();
-    playerSelection = getPlayerChoice();
-    let check = checkInput();
-    if (check === true) {
-        roundWinner = playRound();
-        checkWinner();
-    }
+    roundWinner = playRound();
+    checkWinner();
 }
+
 
 function checkWinner() { 
     if (roundWinner === 'player') {
