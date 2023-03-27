@@ -72,6 +72,7 @@ if (gameCount = 5) {
 */
 
 
+/* 
 function checkInput(choiceP) {
     if (
     (playerSelection === 'rock') ||
@@ -87,7 +88,7 @@ function checkInput(choiceP) {
     }
 }
 
-
+*/
 
 /*
 Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
