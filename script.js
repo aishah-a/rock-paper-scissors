@@ -11,10 +11,12 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+/*
 function getPlayerChoice(){
     let playerChoice = prompt('Please select "Rock", "Paper" or "Scissors".').toLowerCase();
     return playerChoice;
 }
+*/
 
 function playRound(choiceC, choiceP) {
     if (computerSelection === playerSelection) {
