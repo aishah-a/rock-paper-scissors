@@ -57,7 +57,6 @@ function checkWinner() {
 /* for (gameCount = 0; gameCount < 5; gameCount++) {
     game();
 }
-*/
 
 if (gameCount = 5) {
     console.log('Game over!');
@@ -70,6 +69,9 @@ if (gameCount = 5) {
         console.log('It\'s a tie!')
     }
 }
+
+*/
+
 
 function checkInput(choiceP) {
     if (
@@ -85,3 +87,37 @@ function checkInput(choiceP) {
     return checkInput(choiceP);
     }
 }
+
+
+
+/*
+Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+*/
+
+// event listeners for buttons
+const rock = document.getElementById("rockBtn").addEventListener("click", playRock);
+const paper = document.getElementById("paperBtn").addEventListener("click", playPaper);
+const scissors = document.getElementById("scissorsBtn").addEventListener("click", playScissors);
+
+
+
+// functions for gameplay/choice selection
+
+function playRock() {
+    playerSelection = "rock";
+    console.log("you played rock");
+    return playerSelection;
+}
+
+function playPaper() {
+    playerSelection = "paper";
+    console.log("you played paper");
+    return playerSelection;
+}
+
+function playScissors() {
+    playerSelection = "scissors";
+    console.log("you played scissors");
+    return playerSelection;
+}
+
