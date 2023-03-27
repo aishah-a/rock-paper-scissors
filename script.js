@@ -96,12 +96,20 @@ Create three buttons, one for each selection. Add an event listener to the butto
 
 // event listeners for buttons
 const rock = document.getElementById("rockBtn").addEventListener("click", playRock);
+
+document.getElementById("rockBtn").addEventListener("click", game);
+
 const paper = document.getElementById("paperBtn").addEventListener("click", playPaper);
+
+document.getElementById("paperBtn").addEventListener("click", game);
+
 const scissors = document.getElementById("scissorsBtn").addEventListener("click", playScissors);
 
+document.getElementById("scissorsBtn").addEventListener("click", game);
 
 
 // functions for gameplay/choice selection
+
 
 function playRock() {
     playerSelection = "rock";
