@@ -54,9 +54,10 @@ function checkWinner() {
     console.log('Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore );
 }
 
-for (gameCount = 0; gameCount < 5; gameCount++) {
+/* for (gameCount = 0; gameCount < 5; gameCount++) {
     game();
 }
+*/
 
 if (gameCount = 5) {
     console.log('Game over!');
