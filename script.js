@@ -37,6 +37,7 @@ function game() {
     computerSelection = getComputerChoice();
     roundWinner = playRound();
     checkScore();
+
 }
 
 function checkScore() { 
@@ -69,11 +70,20 @@ function checkWinner() {
             finalWinner.innerText =('Both players got the same score. It\'s a tie!'); 
             }
         document.getElementById("scorebox").appendChild(finalWinner);
+
+        document.getElementById("rockBtn").removeEventListener("click", playRock);
+        document.getElementById("rockBtn").removeEventListener("click", game);
+        document.getElementById("paperBtn").removeEventListener("click", playPaper);
+        document.getElementById("paperBtn").removeEventListener("click", game);
+        document.getElementById("scissorsBtn").removeEventListener("click", playScissors);
+        document.getElementById("scissorsBtn").removeEventListener("click", game);
     }
 }
 
 
 // event listeners for buttons 1. play choice 2. commence gameplay 3. show score
+
+
 const rock = document.getElementById("rockBtn").addEventListener("click", playRock);
 document.getElementById("rockBtn").addEventListener("click", game);
 
@@ -109,4 +119,3 @@ Add a div for displaying results and change all of your console.logs into DOM me
 Display the running score, and announce a winner of the game once one player reaches 5 points.
 You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of a programmer’s life.
 */
-
