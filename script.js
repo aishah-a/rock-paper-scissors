@@ -50,7 +50,7 @@ function checkWinner() {
     } else if (roundWinner === 'computer') {
         ++computerScore;
     }
-    console.log('Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore );
+    document.getElementById("scorebox").innerText = 'Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore;
 }
 
 /* for (gameCount = 0; gameCount < 5; gameCount++) {
@@ -94,17 +94,15 @@ function checkInput(choiceP) {
 Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
 */
 
-// event listeners for buttons
+// event listeners for buttons 1. play choice 2. commence gameplay 3. show score
 const rock = document.getElementById("rockBtn").addEventListener("click", playRock);
-
 document.getElementById("rockBtn").addEventListener("click", game);
 
-const paper = document.getElementById("paperBtn").addEventListener("click", playPaper);
 
+const paper = document.getElementById("paperBtn").addEventListener("click", playPaper);
 document.getElementById("paperBtn").addEventListener("click", game);
 
 const scissors = document.getElementById("scissorsBtn").addEventListener("click", playScissors);
-
 document.getElementById("scissorsBtn").addEventListener("click", game);
 
 
@@ -128,4 +126,10 @@ function playScissors() {
     console.log("you played scissors");
     return playerSelection;
 }
+
+/*
+Add a div for displaying results and change all of your console.logs into DOM methods.
+Display the running score, and announce a winner of the game once one player reaches 5 points.
+You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of a programmer’s life.
+*/
 

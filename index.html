@@ -2,17 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <style>
+            #scorebox {
+                border: 1px; 
+                border-style: solid;
+                border-color: #2292A4;
+                background-color: lightblue; 
+                width: 30%;
+                margin: 5px;
+                padding: 3px;
+            }
+
+            button {
+                padding: 3px;
+                margin: 5px;
+            }
+
+        </style>
     </head>
     <body>
         <div>
-            <button id="rockBtn">Rock</button>
+            <button id="rockBtn" class="play-btn">Rock</button>
         </div>
         <div>
-            <button id="paperBtn">Paper</button>
+            <button id="paperBtn" class="play-btn">Paper</button>
         </div>
         <div>
-            <button id="scissorsBtn">Scissors</button>
+            <button id="scissorsBtn" class="play-btn">Scissors</button>
         </div>
+        <div id="scorebox"></div>
         <script src="script.js"></script>
     </body>
 </html>
