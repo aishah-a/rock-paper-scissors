@@ -7,10 +7,19 @@
                 border: 1px; 
                 border-style: solid;
                 border-color: #2292A4;
-                background-color: lightblue; 
-                width: 30%;
+                background-color: rgb(218, 241, 249); 
+                width: max-content;
                 margin: 5px;
+                padding: 10px;
+                font-family: sans-serif;
+                height: max-content;
+            }
+
+            #score-count,
+            #choices,
+            #final-result {
                 padding: 3px;
+                margin: 5px;
             }
 
             button {
@@ -30,7 +39,10 @@
         <div>
             <button id="scissorsBtn" class="play-btn">Scissors</button>
         </div>
-        <div id="scorebox"></div>
+        <div id="scorebox">
+            <div id="score-count">Player: 0 <br> Computer: 0</div>
+            <div id="choices"></div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

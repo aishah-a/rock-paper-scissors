@@ -11,28 +11,24 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/*
-function getPlayerChoice(){
-    let playerChoice = prompt('Please select "Rock", "Paper" or "Scissors".').toLowerCase();
-    return playerChoice;
-}
-*/
+
+const choiceBox = document.getElementById("choices");
 
 function playRound(choiceC, choiceP) {
     if (computerSelection === playerSelection) {
-    console.log('The computer chose " ' + computerSelection + '" too. It\'s a tie!');
+    choiceBox.innerText = 'The computer chose " ' + computerSelection + '" too. It\'s a tie!';
     return 'tie'
     } else if (
     (computerSelection === 'rock' && playerSelection === 'scissors') ||
     (computerSelection === 'paper' && playerSelection === 'rock') ||
     (computerSelection === 'scissors' && playerSelection === 'paper')) {
-    console.log('Computer played "' + computerSelection + '". The computer wins! You lose!');
+    choiceBox.innerText = 'Computer played "' + computerSelection + '". \n The computer wins the round! You lose!';
     return 'computer'
     } else if (
     (computerSelection === 'rock' && playerSelection === 'paper') ||
     (computerSelection === 'paper' && playerSelection === 'scissors') ||
     (computerSelection === 'scissors' && playerSelection === 'rock')) {
-    console.log('Computer played "' + computerSelection + '". You win!');
+    choiceBox.innerText = 'Computer played "' + computerSelection + '". \n You win the round!';
     return 'player'
     }
 }
@@ -40,64 +36,46 @@ function playRound(choiceC, choiceP) {
 function game() {
     computerSelection = getComputerChoice();
     roundWinner = playRound();
-    checkWinner();
+    checkScore();
 }
 
-
-function checkWinner() { 
+function checkScore() { 
     if (roundWinner === 'player') {
         ++playerScore;
     } else if (roundWinner === 'computer') {
         ++computerScore;
     }
-    document.getElementById("scorebox").innerText = 'Scores: \n Player: ' + playerScore + '\n Computer: ' + computerScore;
+ scorebox.innerText = 'Player: ' + playerScore + '\n Computer: ' + computerScore;
+ checkWinner();
 }
 
-/* for (gameCount = 0; gameCount < 5; gameCount++) {
-    game();
-}
+const scorebox = document.getElementById("score-count");
 
-if (gameCount = 5) {
-    console.log('Game over!');
-    console.log('FINAL SCORE: \n Player: ' + playerScore + '\n Computer: ' + computerScore);
-    if (playerScore > computerScore) {    
-    console.log('You won the game! Well done!');
-    } else if (playerScore < computerScore) {    
-        console.log('The computer won the game! You lose.');
-    } else if (playerScore === computerScore) {
-        console.log('It\'s a tie!')
+function checkWinner() {
+    if (playerScore >= 5 || computerScore >= 5) {
+        const finalResult = document.createElement("div");
+        finalResult.innerText = 'Game over! \nFINAL SCORE: \n Player: ' + playerScore + '\n Computer: ' + computerScore;
+        finalResult.setAttribute("id", "final-result");
+        document.getElementById("scorebox").appendChild(finalResult);
+        scorebox.remove();
+        
+        const finalWinner = document.createElement("div");
+        finalWinner.setAttribute("id", "final-winner");
+        if (playerScore > computerScore) {    
+            finalWinner.innerText = 'You won the game! Well done!';
+            } else if (playerScore < computerScore) {    
+            finalWinner.innerText ='The computer won the game! You lose.';
+            } else if (playerScore === computerScore) {
+            finalWinner.innerText =('Both players got the same score. It\'s a tie!'); 
+            }
+        document.getElementById("scorebox").appendChild(finalWinner);
     }
 }
 
-*/
-
-
-/* 
-function checkInput(choiceP) {
-    if (
-    (playerSelection === 'rock') ||
-    (playerSelection === 'paper') ||
-    (playerSelection === 'scissors') ) {
-        return true;
-    } else if (
-    (playerSelection !== 'rock') ||
-    (playerSelection !== 'paper') ||
-    (playerSelection !== 'scissors') ) {
-    playerSelection = prompt('To play, pick "Rock", "Paper" or "Scissors".').toLowerCase();
-    return checkInput(choiceP);
-    }
-}
-
-*/
-
-/*
-Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
-*/
 
 // event listeners for buttons 1. play choice 2. commence gameplay 3. show score
 const rock = document.getElementById("rockBtn").addEventListener("click", playRock);
 document.getElementById("rockBtn").addEventListener("click", game);
-
 
 const paper = document.getElementById("paperBtn").addEventListener("click", playPaper);
 document.getElementById("paperBtn").addEventListener("click", game);
@@ -107,7 +85,6 @@ document.getElementById("scissorsBtn").addEventListener("click", game);
 
 
 // functions for gameplay/choice selection
-
 
 function playRock() {
     playerSelection = "rock";
